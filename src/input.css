@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply font-body text-nico-dark antialiased leading-relaxed tracking-tight;
+    font-size: 1.0625rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold leading-tight;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-argentina-blue text-white font-semibold rounded-lg
+           hover:bg-argentina-blue-dark focus:outline-none focus:ring-2 focus:ring-argentina-blue focus:ring-offset-2
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-argentina-blue text-argentina-blue font-semibold rounded-lg
+           hover:bg-argentina-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-argentina-blue focus:ring-offset-2
+           transition-all duration-200;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-argentina-gold text-nico-dark font-bold rounded-lg
+           hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-argentina-gold focus:ring-offset-2
+           transition-all duration-200;
+  }
+
+  .container-main {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-24;
+  }
+
+  .product-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden
+           hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-nico-dark/80 via-nico-dark/40 to-transparent;
+  }
+
+  .stat-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20;
+  }
+}
+
+@layer components {
+  .woocommerce .quantity .qty {
+    @apply w-16 h-11 px-3 border border-gray-300 rounded-lg text-center text-sm font-medium bg-white;
+  }
+
+  .woocommerce .button {
+    @apply btn-primary cursor-pointer;
+  }
+
+  .woocommerce .button.alt {
+    @apply btn-gold;
+  }
+
+  .woocommerce .button.disabled,
+  .woocommerce .button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .woocommerce .price {
+    @apply text-2xl font-bold text-argentina-blue;
+  }
+
+  .woocommerce .price del {
+    @apply text-nico-gray text-base mr-2;
+  }
+
+  .woocommerce .price ins {
+    @apply no-underline;
+  }
+
+  .woocommerce .star-rating {
+    @apply text-argentina-gold;
+  }
+
+  .woocommerce .woocommerce-product-rating {
+    @apply flex items-center gap-2 mb-4;
+  }
+
+  .woocommerce div.product .product_title {
+    @apply font-heading text-3xl md:text-4xl font-black text-nico-dark mb-4;
+  }
+
+  .woocommerce div.product p.price {
+    @apply mb-6;
+  }
+
+  .woocommerce div.product .woocommerce-product-details__short-description {
+    @apply text-nico-gray leading-relaxed mb-6;
+  }
+
+  .woocommerce .stock {
+    @apply text-sm font-semibold mb-4;
+  }
+
+  .woocommerce .stock.in-stock {
+    @apply text-green-600;
+  }
+
+  .woocommerce .stock.out-of-stock {
+    @apply text-red-500;
+  }
+
+  .woocommerce .product_meta {
+    @apply mt-6 pt-6 border-t border-gray-200 text-sm text-nico-gray;
+  }
+
+  .woocommerce .product_meta > span {
+    @apply block mb-1;
+  }
+
+  .woocommerce .woocommerce-product-gallery {
+    @apply sticky top-24;
+  }
+
+  .woocommerce .woocommerce-tabs {
+    @apply mt-16;
+  }
+
+  .woocommerce .woocommerce-tabs ul.tabs {
+    @apply flex flex-wrap gap-1 list-none m-0 p-0 border-b border-gray-200;
+  }
+
+  .woocommerce .woocommerce-tabs ul.tabs li {
+    @apply m-0;
+  }
+
+  .woocommerce .woocommerce-tabs ul.tabs li a {
+    @apply block px-6 py-3 text-sm font-semibold text-nico-gray border-b-2 border-transparent
+           hover:text-argentina-blue hover:border-argentina-blue transition-all;
+  }
+
+  .woocommerce .woocommerce-tabs ul.tabs li.active a {
+    @apply text-argentina-blue border-argentina-blue;
+  }
+
+  .woocommerce .woocommerce-tabs .panel {
+    @apply py-8;
+  }
+
+  .woocommerce .woocommerce-tabs .panel h2 {
+    @apply font-heading text-2xl font-bold mb-4;
+  }
+
+  .woocommerce .woocommerce-breadcrumb {
+    @apply text-sm text-gray-400;
+  }
+
+  .woocommerce .woocommerce-breadcrumb a {
+    @apply text-gray-300 hover:text-white transition-colors;
+  }
+
+  .woocommerce .woocommerce-result-count {
+    @apply text-sm text-nico-gray mb-4;
+  }
+
+  .woocommerce .woocommerce-ordering select {
+    @apply px-4 py-2.5 border border-gray-300 rounded-lg text-sm bg-white text-nico-dark
+           focus:ring-2 focus:ring-argentina-blue focus:border-argentina-blue cursor-pointer;
+  }
+
+  .woocommerce .woocommerce-pagination {
+    @apply mt-12;
+  }
+
+  .woocommerce .woocommerce-pagination ul.page-numbers {
+    @apply flex items-center justify-center gap-2 list-none m-0 p-0;
+  }
+
+  .woocommerce .woocommerce-pagination ul.page-numbers li {
+    @apply m-0;
+  }
+
+  .woocommerce .woocommerce-pagination ul.page-numbers li a,
+  .woocommerce .woocommerce-pagination ul.page-numbers li span {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-lg text-sm font-semibold
+           border border-gray-200 bg-white text-nico-dark hover:bg-argentina-blue hover:text-white
+           hover:border-argentina-blue transition-all;
+  }
+
+  .woocommerce .woocommerce-pagination ul.page-numbers li span.current {
+    @apply bg-argentina-blue text-white border-argentina-blue;
+  }
+
+  .woocommerce .woocommerce-message,
+  .woocommerce .woocommerce-info,
+  .woocommerce .woocommerce-error {
+    @apply px-6 py-4 rounded-xl mb-6 text-sm font-medium flex items-center gap-3;
+  }
+
+  .woocommerce .woocommerce-message {
+    @apply bg-green-50 text-green-800 border border-green-200;
+  }
+
+  .woocommerce .woocommerce-info {
+    @apply bg-blue-50 text-blue-800 border border-blue-200;
+  }
+
+  .woocommerce .woocommerce-error {
+    @apply bg-red-50 text-red-800 border border-red-200;
+  }
+
+  .woocommerce .woocommerce-message .button,
+  .woocommerce .woocommerce-info .button,
+  .woocommerce .woocommerce-error .button {
+    @apply ml-auto btn-primary text-xs py-1.5 px-4;
+  }
+
+  .woocommerce table.shop_table {
+    @apply w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm;
+  }
+
+  .woocommerce table.shop_table th {
+    @apply bg-nico-gray-light text-nico-dark font-heading font-bold text-sm uppercase tracking-wider py-4 px-4 text-left;
+  }
+
+  .woocommerce table.shop_table td {
+    @apply py-4 px-4 border-t border-gray-100 text-sm;
+  }
+
+  .woocommerce table.shop_table td.product-name {
+    @apply font-semibold;
+  }
+
+  .woocommerce table.shop_table td.actions {
+    @apply py-4;
+  }
+
+  .woocommerce table.shop_table td.actions .coupon input {
+    @apply px-4 py-2.5 border border-gray-300 rounded-lg text-sm;
+  }
+
+  .woocommerce #coupon_code {
+    @apply w-32 mr-2;
+  }
+
+  .woocommerce .cart_totals h2 {
+    @apply font-heading text-xl font-bold mb-4;
+  }
+
+  .woocommerce .cart_totals table.shop_table {
+    @apply mt-4;
+  }
+
+  .woocommerce .wc-proceed-to-checkout {
+    @apply mt-6;
+  }
+
+  .woocommerce .wc-proceed-to-checkout .button {
+    @apply btn-gold text-base w-full text-center py-4;
+  }
+
+  .woocommerce .checkout h3 {
+    @apply font-heading text-xl font-bold mb-4;
+  }
+
+  .woocommerce .form-row {
+    @apply mb-4;
+  }
+
+  .woocommerce .form-row label {
+    @apply block text-sm font-semibold text-nico-dark mb-1;
+  }
+
+  .woocommerce .form-row input,
+  .woocommerce .form-row textarea,
+  .woocommerce .form-row select {
+    @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm bg-white
+           focus:ring-2 focus:ring-argentina-blue focus:border-argentina-blue;
+  }
+
+  .woocommerce .form-row .select2-selection {
+    @apply border border-gray-300 rounded-lg h-11;
+  }
+
+  .woocommerce .woocommerce-checkout-payment {
+    @apply bg-nico-gray-light rounded-xl p-6 mt-8;
+  }
+
+  .woocommerce .woocommerce-checkout-payment .payment_methods {
+    @apply list-none m-0 p-0;
+  }
+
+  .woocommerce .woocommerce-checkout-payment .payment_methods li {
+    @apply mb-4 pb-4 border-b border-gray-200 last:border-0 last:mb-0 last:pb-0;
+  }
+
+  .woocommerce .woocommerce-checkout-payment .payment_methods label {
+    @apply font-semibold cursor-pointer;
+  }
+
+  .woocommerce .woocommerce-checkout-payment .place-order .button {
+    @apply btn-gold text-base w-full py-4;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-navigation {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8 lg:mb-0;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-navigation ul {
+    @apply list-none m-0 p-0;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li {
+    @apply border-b border-gray-100 last:border-0;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+    @apply block px-6 py-3 text-sm font-medium text-nico-dark hover:bg-argentina-blue hover:text-white transition-colors;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+    @apply bg-argentina-blue text-white;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-content {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-content .button {
+    @apply btn-primary text-sm;
+  }
+
+  .woocommerce-account .woocommerce h2 {
+    @apply font-heading text-2xl font-bold mb-4;
+  }
+
+  .woocommerce-account .woocommerce .login-form,
+  .woocommerce-account .woocommerce .register-form {
+    @apply max-w-md mx-auto;
+  }
+
+  .woocommerce .related.products {
+    @apply mt-16 pt-8 border-t border-gray-200;
+  }
+
+  .woocommerce .related.products h2 {
+    @apply font-heading text-2xl font-bold mb-6;
+  }
+
+  .woocommerce .upsells.products {
+    @apply mt-16;
+  }
+
+  .woocommerce .upsells.products h2 {
+    @apply font-heading text-2xl font-bold mb-6;
+  }
+
+  .woocommerce .products ul,
+  .woocommerce ul.products {
+    @apply list-none m-0 p-0;
+  }
+}
+
+@layer components {
+  .hero-slide {
+    will-change: opacity;
+  }
+
+  .hero-dot {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  #mobile-menu .sub-menu {
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  #mobile-menu .menu-item-has-children {
+    position: relative;
+  }
+  #mobile-menu .menu-item-has-children > a {
+    padding-right: 2.5rem;
+  }
+}
