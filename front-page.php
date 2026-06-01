@@ -58,7 +58,7 @@
         <?php foreach ($hero_slides as $i => $slide) : ?>
             <div class="hero-slide absolute inset-0 <?php echo $i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'; ?> transition-opacity duration-1000 ease-in-out">
                 <?php if (!empty($slide['image'])) : ?>
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url($slide['image']); ?>');"></div>
+                    <div class="hero-bg absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url($slide['image']); ?>');"></div>
                 <?php endif; ?>
                 <div class="absolute inset-0 bg-gradient-to-t <?php echo esc_attr($slide['overlay']); ?>"></div>
 
@@ -111,7 +111,9 @@
             ];
             foreach ($quick_stats as $stat) : ?>
                 <div>
-                    <p class="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-nico-dark dark:text-white"><?php echo esc_html($stat['value'] . $stat['suffix']); ?></p>
+                    <p class="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
+                        <span class="counter" data-target="<?php echo esc_attr($stat['value']); ?>">0</span><?php echo esc_html($stat['suffix']); ?>
+                    </p>
                     <p class="text-nico-gray/70 dark:text-gray-400 text-xs uppercase tracking-wider mt-1 font-heading font-semibold"><?php echo esc_html($stat['label']); ?></p>
                 </div>
             <?php endforeach; ?>
@@ -138,7 +140,7 @@
                 </div>
                 <div class="flex gap-8 mt-8">
                     <div class="text-center">
-                        <p class="font-heading text-3xl font-black text-argentina-blue dark:text-argentina-gold">2004</p>
+                        <p class="font-heading text-3xl font-black text-argentina-blue dark:text-argentina-gold"><span class="counter" data-target="2004">0</span></p>
                         <p class="text-xs text-nico-gray dark:text-gray-400 uppercase tracking-wider mt-1"><?php esc_html_e('Born', 'nicopaz'); ?></p>
                     </div>
                     <div class="text-center">
@@ -663,19 +665,55 @@
                 <div>
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-heading font-bold text-nico-dark dark:text-gray-100"><?php echo esc_html($skill['name']); ?></span>
-                        <span class="text-xs font-heading font-bold text-argentina-blue dark:text-white"><?php echo esc_html($skill['value']); ?></span>
+                        <span class="text-xs font-heading font-bold text-argentina-blue dark:text-white"><span class="counter" data-target="<?php echo esc_attr($skill['value']); ?>">0</span></span>
                     </div>
                         <div class="w-full h-2 bg-nico-gray-light dark:bg-gray-800 rounded-full overflow-hidden">
                         <div class="h-full bg-nico-dark dark:bg-white rounded-full transition-all duration-1000" style="width: <?php echo esc_attr($skill['value']); ?>%"></div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
         </div>
     </div>
 </section>
 
 <!-- ============================================================
-     12. SPONSORS / PARTNERS
+     12. AS SEEN IN — Press logos marquee
+     ============================================================ -->
+<section class="py-16 bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
+    <div class="container-main mb-8">
+        <div class="text-center">
+            <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+                <?php esc_html_e('Featured In', 'nicopaz'); ?>
+            </p>
+            <h2 class="font-heading text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
+                <?php esc_html_e('As Seen In', 'nicopaz'); ?>
+            </h2>
+        </div>
+    </div>
+
+    <div class="marquee overflow-hidden">
+        <div class="marquee-track flex items-center gap-12 md:gap-16 whitespace-nowrap">
+            <?php
+            $press = [
+                'MARCA', 'OLÉ', 'ESPN', 'BBC SPORT',
+                'SKY SPORTS', 'THE GUARDIAN', 'AS', 'TYC SPORTS',
+                'GAZZETTA', 'L\'ÉQUIPE', 'KICKER', 'MUNDO DEPORTIVO',
+            ];
+            // Render twice for seamless loop
+            for ($copy = 0; $copy < 2; $copy++) :
+                foreach ($press as $logo) : ?>
+                    <div class="press-logo flex-shrink-0">
+                        <span class="font-heading text-2xl md:text-3xl font-black text-nico-dark/30 dark:text-white/30 hover:text-nico-dark dark:hover:text-white transition-colors duration-300 cursor-default"><?php echo esc_html($logo); ?></span>
+                    </div>
+                <?php endforeach;
+            endfor;
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     13. SPONSORS / PARTNERS
      ============================================================ -->
 <section class="py-16 bg-white dark:bg-black">
     <div class="container-main">

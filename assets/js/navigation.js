@@ -171,4 +171,47 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // --- Animated number counters ---
+  var counters = document.querySelectorAll('.counter');
+  if (counters.length) {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateCounter(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      if (isNaN(target)) return;
+
+      if (prefersReducedMotion) {
+        el.textContent = target;
+        return;
+      }
+
+      var duration = 1600;
+      var start = null;
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      counters.forEach(function (c) { counterObserver.observe(c); });
+    } else {
+      counters.forEach(animateCounter);
+    }
+  }
 });

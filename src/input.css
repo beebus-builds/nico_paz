@@ -384,6 +384,29 @@
   .hero-dot {
     cursor: pointer;
   }
+
+  .hero-bg {
+    transform-origin: center center;
+  }
+
+  .hero-slide.opacity-0 .hero-bg {
+    transform: scale(1) translate(0, 0);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-slide.opacity-100 .hero-bg {
+      animation: ken-burns 6s ease-out forwards;
+    }
+  }
+
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.12) translate(-1.5%, -1%);
+    }
+  }
 }
 
 @layer utilities {
@@ -398,6 +421,29 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee-track {
+      animation: marquee-scroll 40s linear infinite;
+    }
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @media (max-width: 1023px) {
@@ -409,5 +455,16 @@
   }
   #mobile-menu .menu-item-has-children > a {
     padding-right: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
