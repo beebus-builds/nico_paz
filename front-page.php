@@ -671,7 +671,7 @@
                         <div class="h-full bg-nico-dark dark:bg-white rounded-full transition-all duration-1000" style="width: <?php echo esc_attr($skill['value']); ?>%"></div>
                     </div>
                 </div>
-            <?php endforeach;
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -705,9 +705,8 @@
                     <div class="press-logo flex-shrink-0">
                         <span class="font-heading text-2xl md:text-3xl font-black text-nico-dark/30 dark:text-white/30 hover:text-nico-dark dark:hover:text-white transition-colors duration-300 cursor-default"><?php echo esc_html($logo); ?></span>
                     </div>
-                <?php endforeach;
-            endfor;
-            ?>
+                <?php endforeach; ?>
+            <?php endfor; ?>
         </div>
     </div>
 </section>
