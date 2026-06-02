@@ -12,6 +12,8 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
     public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
         $classes = empty($item->classes) ? [] : (array) $item->classes;
         $has_children = in_array('menu-item-has-children', $classes);
+        $is_current   = in_array('current-menu-item', $classes);
+        $is_ancestor  = in_array('current-menu-ancestor', $classes);
         $li_classes = $depth === 0 ? 'relative group' : 'relative group';
         if ($has_children) $li_classes .= ' menu-item-has-children';
 
@@ -22,6 +24,9 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         $atts['target'] = !empty($item->target) ? esc_attr($item->target) : '';
         $atts['rel']    = !empty($item->xfn) ? esc_attr($item->xfn) : '';
         $atts['href']   = !empty($item->url) ? esc_url($item->url) : '#';
+        if ($is_current) {
+            $atts['aria-current'] = 'page';
+        }
         $atts['class']  = 'text-nico-dark dark:text-gray-100 font-medium text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider hover:text-celeste dark:hover:text-white transition-colors py-2 inline-flex items-center gap-1';
 
         $attributes = '';

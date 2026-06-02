@@ -107,6 +107,35 @@
 
 </div>
 
+<?php // Reading progress bar (long content, F-pattern) ?>
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+<?php // Back to top button (usability) ?>
+<button id="back-to-top" type="button" class="is-visible:translate-y-0" aria-label="<?php esc_attr_e('Back to top', 'nicopaz'); ?>" title="<?php esc_attr_e('Back to top', 'nicopaz'); ?>">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+    </svg>
+</button>
+
+<?php // Toast notifications container (feedback, error recovery) ?>
+<div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<?php // Cookie consent banner (trust signals) ?>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="<?php esc_attr_e('Cookie consent', 'nicopaz'); ?>">
+    <div class="cookie-banner-content">
+        <?php esc_html_e('We use cookies to enhance your experience, analyze traffic, and improve our site. By continuing, you agree to our use of cookies.', 'nicopaz'); ?>
+        <a href="<?php echo esc_url(get_privacy_policy_url() ?: home_url('/privacy-policy')); ?>"><?php esc_html_e('Learn more', 'nicopaz'); ?></a>
+    </div>
+    <div class="cookie-banner-actions">
+        <button type="button" class="cookie-banner-btn cookie-banner-btn-primary" data-cookie-action="accept">
+            <?php esc_html_e('Accept all', 'nicopaz'); ?>
+        </button>
+        <button type="button" class="cookie-banner-btn cookie-banner-btn-secondary" data-cookie-action="decline">
+            <?php esc_html_e('Decline', 'nicopaz'); ?>
+        </button>
+    </div>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 </html>

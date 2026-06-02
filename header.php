@@ -9,6 +9,8 @@
 <body <?php body_class('bg-white dark:bg-black min-h-screen flex flex-col overflow-x-hidden'); ?>>
 <?php wp_body_open(); ?>
 
+<a class="skip-link" href="#content"><?php esc_html_e('Skip to main content', 'nicopaz'); ?></a>
+
 <div id="page">
     <header id="site-navbar" data-navbar-position="top" class="navbar-wrapper navbar-top">
         <!-- Decorative background layers wrapped in a clipping container -->

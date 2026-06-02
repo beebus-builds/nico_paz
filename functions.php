@@ -95,6 +95,84 @@ function nicopaz_og_tags()
 }
 add_action('wp_head', 'nicopaz_og_tags', 5);
 
+/**
+ * Schema.org JSON-LD markup for SEO and trust signals.
+ * Outputs Person + WebSite + BreadcrumbList schemas.
+ */
+function nicopaz_schema_markup()
+{
+    if (is_admin()) return;
+
+    $site_name = get_bloginfo('name');
+    $site_url  = home_url('/');
+    $site_desc = get_bloginfo('description') ?: 'Official site of Nico Paz #10 — Argentine midfielder.';
+    $logo_url  = get_template_directory_uri() . '/assets/images/og-image.svg';
+
+    $schema = [
+        '@context'    => 'https://schema.org',
+        '@graph'      => [
+            [
+                '@type'       => 'WebSite',
+                '@id'         => $site_url . '#website',
+                'url'         => $site_url,
+                'name'        => $site_name,
+                'description' => $site_desc,
+                'publisher'   => ['@id' => $site_url . '#person'],
+                'inLanguage'  => get_bloginfo('language'),
+            ],
+            [
+                '@type'       => 'Person',
+                '@id'         => $site_url . '#person',
+                'name'        => 'Nico Paz',
+                'alternateName' => 'Nicolás Paz Martínez',
+                'description' => 'Argentine professional footballer. Midfielder. Number 10.',
+                'url'         => $site_url,
+                'image'       => $logo_url,
+                'logo'        => $logo_url,
+                'jobTitle'    => 'Professional Footballer',
+                'nationality' => [
+                    '@type' => 'Country',
+                    'name'  => 'Argentina',
+                ],
+                'memberOf'    => [
+                    '@type'      => 'SportsTeam',
+                    'name'       => 'Como 1907',
+                    'sport'      => 'Football',
+                ],
+                'knowsAbout'  => ['Football', 'Soccer', 'Midfield play', 'Argentina National Team'],
+                'sameAs'      => [
+                    'https://en.wikipedia.org/wiki/Nico_Paz',
+                    'https://www.instagram.com/nicopaz10/',
+                    'https://twitter.com/nicopaz10',
+                ],
+            ],
+        ],
+    ];
+
+    if (is_singular('post') || is_singular('page')) {
+        $schema['@graph'][] = [
+            '@type'         => 'BreadcrumbList',
+            'itemListElement' => [
+                [
+                    '@type'    => 'ListItem',
+                    'position' => 1,
+                    'name'     => __('Home', 'nicopaz'),
+                    'item'     => $site_url,
+                ],
+                [
+                    '@type'    => 'ListItem',
+                    'position' => 2,
+                    'name'     => get_the_title(),
+                    'item'     => get_permalink(),
+                ],
+            ],
+        ];
+    }
+
+    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
+}
+add_action('wp_head', 'nicopaz_schema_markup', 6);
+
 function nicopaz_scripts()
 {
     $css_file = get_template_directory() . '/assets/css/style.css';
