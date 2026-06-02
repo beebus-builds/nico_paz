@@ -68,16 +68,16 @@
                     <div class="font-display font-black text-white/[0.04] text-[18rem] lg:text-[26rem] leading-none select-none tracking-tighter">10</div>
                 </div>
 
-                <!-- Sun of May in top corner -->
-                <div class="absolute top-10 right-10 z-10 hidden md:block">
+                <!-- Sun of May in top corner (below navbar) -->
+                <div class="absolute top-24 right-6 md:right-12 z-10 hidden md:block">
                     <div class="sun-may sun-spin opacity-40 hover:opacity-85 transition-opacity duration-300" aria-hidden="true"></div>
                 </div>
 
                 <!-- Argentina flag bar accent -->
                 <div class="absolute top-0 left-0 right-0 h-1.5 z-20 bg-flag-stripes"></div>
 
-                <div class="absolute inset-0 flex items-end justify-start z-10">
-                    <div class="px-6 md:px-12 pb-32 md:pb-40 w-full">
+                <div class="absolute inset-0 flex items-center justify-start z-10 pt-20 md:pt-24">
+                    <div class="px-6 md:px-12 pb-16 md:pb-24 w-full">
                         <div class="max-w-5xl">
                             <!-- Tilted Bebas tag -->
                             <div class="mb-3 md:mb-4 flex items-center gap-3">
