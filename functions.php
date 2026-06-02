@@ -101,7 +101,7 @@ function nicopaz_scripts()
     $css_version = file_exists($css_file) ? filemtime($css_file) : NICOPAZ_VERSION;
 
     wp_enqueue_style('nicopaz-tailwind', get_template_directory_uri() . '/assets/css/style.css', [], $css_version);
-    wp_enqueue_style('nicopaz-google-fonts', 'https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@600;700;800;900&family=Bebas+Neue&family=Black+Ops+One&family=Bungee&family=Bungee+Inline&family=Dancing+Script:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap', [], null);
+    wp_enqueue_style('nicopaz-google-fonts', 'https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@600;700;800;900&family=Bebas+Neue&family=Black+Ops+One&family=Bungee&family=Bungee+Inline&family=Dancing+Script:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@600;700;800&family=Lobster&family=Playball&family=Montserrat:ital,wght@1,900&family=Orbitron:wght@400;500;600;700;800;900&family=Oxanium:wght@300;400;500;600;700;800&family=Tektur:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Chakra+Petch:wght@400;500;600;700&family=Syncopate:wght@400;700&family=Unbounded:wght@400;500;600;700;800;900&family=Krona+One&family=Michroma&display=swap', [], null);
 
     wp_enqueue_script('nicopaz-navigation', get_template_directory_uri() . '/assets/js/navigation.js', [], NICOPAZ_VERSION, true);
 

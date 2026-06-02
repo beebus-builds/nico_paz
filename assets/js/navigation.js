@@ -53,11 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var mainContent = document.getElementById('content');
   var STORAGE_KEY = 'nicopaz-navbar-position';
   var SCROLL_THRESHOLD = 60;
-  var isMobile = window.matchMedia('(max-width: 639px)').matches;
+
+  var preferredPosition = 'top';
 
   function setNavbarPosition(position) {
     if (!navbar) return;
-    if (isMobile) {
+    if (window.matchMedia('(max-width: 639px)').matches) {
       position = 'top';
     }
     // Remove old position classes
@@ -66,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
     navbar.classList.add('navbar-' + position);
     navbar.setAttribute('data-navbar-position', position);
 
-    // Update active state in menu
+    // Update active state in menu based on user preference
     positionOptions.forEach(function (opt) {
-      var isActive = opt.getAttribute('data-position') === position;
+      var isActive = opt.getAttribute('data-position') === preferredPosition;
       opt.classList.toggle('is-active', isActive);
     });
 
@@ -78,6 +79,39 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('navbar-offset-' + position);
     }
   }
+
+  function updateNavbarPositionAndScroll() {
+    if (!navbar) return;
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Check if we are inside the hero section
+    var hero = document.getElementById('hero-carousel');
+    var isInHero = false;
+
+    if (hero) {
+      var heroHeight = hero.offsetHeight;
+      // Force top alignment when inside the hero section (with 50px buffer)
+      isInHero = scrollY < (heroHeight - 50);
+    } else {
+      // Fallback threshold if no hero carousel is present
+      isInHero = scrollY < SCROLL_THRESHOLD;
+    }
+
+    var activePosition = isInHero ? 'top' : preferredPosition;
+    setNavbarPosition(activePosition);
+
+    // Update scrolled state classes
+    var isScrolled = scrollY > SCROLL_THRESHOLD;
+    navbar.classList.toggle('navbar-scrolled', isScrolled);
+  }
+
+  // Load user alignment preference from local storage
+  try {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && ['top', 'bottom', 'left', 'right'].indexOf(saved) !== -1) {
+      preferredPosition = saved;
+    }
+  } catch (e) { /* ignore */ }
 
   if (pickerBtn && pickerMenu) {
     pickerBtn.addEventListener('click', function (e) {
@@ -109,45 +143,45 @@ document.addEventListener('DOMContentLoaded', function () {
     positionOptions.forEach(function (option) {
       option.addEventListener('click', function () {
         var position = this.getAttribute('data-position');
-        setNavbarPosition(position);
-        pickerMenu.classList.remove('is-open');
-        pickerBtn.setAttribute('aria-expanded', 'false');
+        preferredPosition = position;
 
         // Save preference
         try {
           localStorage.setItem(STORAGE_KEY, position);
         } catch (e) { /* localStorage may be disabled */ }
+
+        updateNavbarPositionAndScroll();
+
+        pickerMenu.classList.remove('is-open');
+        pickerBtn.setAttribute('aria-expanded', 'false');
+
+        // Close mobile menu drawer if it's open (in case it was open before switching)
+        var mobileMenu = document.getElementById('mobile-menu');
+        var mobileToggle = document.getElementById('mobile-menu-toggle');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        if (mobileToggle) {
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
       });
     });
-
-    // Load saved position (desktop only)
-    if (!isMobile) {
-      try {
-        var saved = localStorage.getItem(STORAGE_KEY);
-        if (saved && ['top', 'bottom', 'left', 'right'].indexOf(saved) !== -1) {
-          setNavbarPosition(saved);
-        }
-      } catch (e) { /* ignore */ }
-    }
   }
 
-  // --- Scroll-triggered color change ---
+  // --- Scroll-triggered position and color change ---
   if (navbar) {
     var scrollTicking = false;
-    function updateNavbarOnScroll() {
-      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      var isScrolled = scrollY > SCROLL_THRESHOLD;
-      navbar.classList.toggle('navbar-scrolled', isScrolled);
-      scrollTicking = false;
-    }
     function onScroll() {
       if (!scrollTicking) {
-        window.requestAnimationFrame(updateNavbarOnScroll);
+        window.requestAnimationFrame(function () {
+          updateNavbarPositionAndScroll();
+          scrollTicking = false;
+        });
         scrollTicking = true;
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    updateNavbarOnScroll();
+    updateNavbarPositionAndScroll();
   }
 
   // --- Dark mode toggle ---
@@ -184,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var heroSlides = document.getElementById('hero-slides');
   if (heroSlides) {
     var slides = heroSlides.querySelectorAll('.hero-slide');
-    var dots = document.querySelectorAll('.hero-dot');
+    var dotThumbs = document.querySelectorAll('.hero-dot-thumb');
     var current = 0;
     var interval = parseInt(heroSlides.getAttribute('data-interval')) || 6000;
     var timer = null;
@@ -195,11 +229,14 @@ document.addEventListener('DOMContentLoaded', function () {
         s.classList.toggle('opacity-0', i !== index);
         s.classList.toggle('pointer-events-none', i !== index);
       });
-      dots.forEach(function (d, i) {
-        d.classList.toggle('bg-white', i === index);
-        d.classList.toggle('w-7', i === index);
-        d.classList.toggle('bg-white/40', i !== index);
-        d.classList.toggle('hover:bg-white/70', i !== index);
+      dotThumbs.forEach(function (d, i) {
+        if (i === index) {
+          d.classList.remove('border-white/20', 'scale-100');
+          d.classList.add('border-celeste', 'scale-105', 'shadow-[0_0_15px_rgba(117,170,219,0.6)]');
+        } else {
+          d.classList.remove('border-celeste', 'scale-105', 'shadow-[0_0_15px_rgba(117,170,219,0.6)]');
+          d.classList.add('border-white/20', 'scale-100');
+        }
       });
       current = index;
     }
@@ -217,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (timer) { clearInterval(timer); timer = null; }
     }
 
-    dots.forEach(function (dot) {
+    dotThumbs.forEach(function (dot) {
       dot.addEventListener('click', function () {
         goTo(parseInt(this.getAttribute('data-index')));
         startTimer();
