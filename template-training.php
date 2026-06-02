@@ -12,9 +12,21 @@ get_header(); ?>
         <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Training', 'nicopaz'); ?>
         </p>
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white mb-8">
             <?php esc_html_e('Training Ground', 'nicopaz'); ?>
         </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-nico-gray-light dark:bg-gray-950">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/training-1.webp'); ?>"
+                     alt="<?php esc_attr_e('Training session', 'nicopaz'); ?>"
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-nico-gray-light dark:bg-gray-950">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/training-2.webp'); ?>"
+                     alt="<?php esc_attr_e('Training session', 'nicopaz'); ?>"
+                     class="w-full h-full object-cover">
+            </div>
+        </div>
     </div>
 </section>
 

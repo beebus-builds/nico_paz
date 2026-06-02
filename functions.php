@@ -28,6 +28,8 @@ if (!function_exists('nicopaz_setup')) :
         ]);
         add_theme_support('align-wide');
         add_theme_support('responsive-embeds');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('automatic-feed-links');
 
         register_nav_menus([
             'primary' => __('Main Menu', 'nicopaz'),
@@ -52,6 +54,46 @@ function nicopaz_content_width()
     $GLOBALS['content_width'] = apply_filters('nicopaz_content_width', 1280);
 }
 add_action('after_setup_theme', 'nicopaz_content_width', 0);
+
+function nicopaz_favicon()
+{
+    $favicon_url = get_template_directory_uri() . '/assets/images/favicon.svg';
+    echo '<link rel="icon" type="image/svg+xml" href="' . esc_url($favicon_url) . '">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url($favicon_url) . '">' . "\n";
+}
+add_action('wp_head', 'nicopaz_favicon', 1);
+
+function nicopaz_og_tags()
+{
+    if (is_admin()) return;
+
+    $og_image = get_template_directory_uri() . '/assets/images/og-image.svg';
+    $site_name = get_bloginfo('name');
+    $description = get_bloginfo('description');
+    $url = is_singular() ? get_permalink() : home_url('/');
+    $title = is_singular() ? get_the_title() : $site_name;
+
+    if (is_singular() && has_excerpt()) {
+        $description = wp_strip_all_tags(get_the_excerpt());
+    }
+
+    echo '<meta property="og:type" content="' . (is_singular() ? 'article' : 'website') . '">' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr($description ?: 'Official site of Nico Paz #10 — Argentine midfielder.') . '">' . "\n";
+    echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
+    echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '">' . "\n";
+    echo '<meta property="og:image" content="' . esc_url($og_image) . '">' . "\n";
+    echo '<meta property="og:image:width" content="1200">' . "\n";
+    echo '<meta property="og:image:height" content="630">' . "\n";
+
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta name="twitter:title" content="' . esc_attr($title) . '">' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr($description ?: 'Official site of Nico Paz #10 — Argentine midfielder.') . '">' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url($og_image) . '">' . "\n";
+    echo '<meta name="theme-color" content="#75AADB">' . "\n";
+    echo '<meta name="description" content="' . esc_attr($description ?: 'Official site of Nico Paz #10 — Argentine midfielder.') . '">' . "\n";
+}
+add_action('wp_head', 'nicopaz_og_tags', 5);
 
 function nicopaz_scripts()
 {

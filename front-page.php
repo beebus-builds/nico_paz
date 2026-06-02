@@ -30,7 +30,7 @@
             ],
         ],
         [
-            'image'    => get_template_directory_uri() . '/assets/images/hero-3.svg',
+            'image'    => get_template_directory_uri() . '/assets/images/hero-3.webp',
             'overlay'  => 'from-black/70 via-black/40 to-transparent',
             'tag'      => __('Rising Star', 'nicopaz'),
             'heading'  => 'FROM <span class="text-argentina-gold">MADRID</span> TO <span class="text-argentina-blue dark:text-argentina-gold">COMO</span>',
@@ -40,7 +40,7 @@
             ],
         ],
         [
-            'image'    => get_template_directory_uri() . '/assets/images/hero-4.svg',
+            'image'    => get_template_directory_uri() . '/assets/images/hero-4.webp',
             'overlay'  => 'from-black/70 via-black/40 to-transparent',
             'tag'      => __('Stay Connected', 'nicopaz'),
             'heading'  => '<span class="text-argentina-blue dark:text-argentina-gold">FOLLOW</span> THE <span class="text-argentina-gold">JOURNEY</span>',
@@ -419,39 +419,28 @@
             </h2>
         </div>
 
+        <?php
+        $gallery_items = [
+            ['img' => 'gallery-1', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-2', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-3', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-4', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-5', 'size' => 'aspect-[2/1] md:aspect-[2/1]', 'col' => 'md:col-span-2'],
+            ['img' => 'gallery-6', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-7', 'size' => 'aspect-square', 'col' => ''],
+            ['img' => 'gallery-8', 'size' => 'aspect-square', 'col' => ''],
+        ];
+        ?>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="md:col-span-2 aspect-square md:aspect-[2/1] bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-5xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
-            <div class="aspect-square bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
-                <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/20 dark:group-hover:bg-white/10 transition-colors z-10"></div>
-                <span class="text-nico-gray/30 dark:text-white/10 font-heading text-4xl font-black absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">NP</span>
-            </div>
+            <?php foreach ($gallery_items as $g) : ?>
+                <div class="<?php echo esc_attr(trim($g['col'] . ' ' . $g['size'])); ?> bg-nico-gray-light dark:bg-gray-950 rounded-xl overflow-hidden group relative">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $g['img'] . '.webp'); ?>"
+                         alt="<?php esc_attr_e('Nico Paz in action', 'nicopaz'); ?>"
+                         loading="lazy"
+                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-nico-dark/0 group-hover:bg-nico-dark/30 dark:group-hover:bg-black/40 transition-colors z-10"></div>
+                </div>
+            <?php endforeach; ?>
         </div>
 
         <div class="text-center mt-8">

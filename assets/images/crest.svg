@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240">
+  <defs>
+    <linearGradient id="crest-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#75AADB"/>
+      <stop offset="100%" stop-color="#3672B0"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield shape -->
+  <path d="M 100 10 L 190 50 L 190 130 Q 190 200 100 230 Q 10 200 10 130 L 10 50 Z" fill="url(#crest-grad)" stroke="#0A0E1A" stroke-width="3"/>
+  <!-- Inner border -->
+  <path d="M 100 25 L 175 58 L 175 130 Q 175 190 100 215 Q 25 190 25 130 L 25 58 Z" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+  <!-- NP letters -->
+  <text x="100" y="115" font-family="system-ui, sans-serif" font-size="64" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">NP</text>
+  <!-- Number 10 -->
+  <text x="100" y="160" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#F6B40E" text-anchor="middle" letter-spacing="3">N° 10</text>
+  <!-- Stars -->
+  <text x="60" y="80" font-size="20" fill="#F6B40E">★</text>
+  <text x="140" y="80" font-size="20" fill="#F6B40E">★</text>
+</svg>

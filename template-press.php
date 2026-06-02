@@ -97,6 +97,31 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- HERO ACTION SHOT -->
+<section class="bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
+    <div class="container-main">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-2 aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-2xl bg-nico-gray-light dark:bg-gray-950">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/press-action-1.webp'); ?>"
+                     alt="<?php esc_attr_e('Nico Paz action shot', 'nicopaz'); ?>"
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
+                <div class="aspect-square overflow-hidden rounded-2xl bg-nico-gray-light dark:bg-gray-950">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/press-headshot-1.webp'); ?>"
+                         alt="<?php esc_attr_e('Nico Paz portrait', 'nicopaz'); ?>"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl bg-nico-gray-light dark:bg-gray-950">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/press-headshot-2.webp'); ?>"
+                         alt="<?php esc_attr_e('Nico Paz portrait', 'nicopaz'); ?>"
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- DOWNLOADABLE ASSETS -->
 <section id="downloads" class="section-padding bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
     <div class="container-main max-w-5xl">

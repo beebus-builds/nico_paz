@@ -31,10 +31,17 @@ get_header(); ?>
                 ['tag' => __('Travel', 'nicopaz'), 'title' => __('Away Days: Traveling with the Team', 'nicopaz'), 'excerpt' => __('From hotel arrivals to away fan atmospheres — the travel experience in Serie A.', 'nicopaz'), 'time' => '4 min read'],
                 ['tag' => __('Recovery', 'nicopaz'), 'title' => __('My Recovery & Nutrition Routine', 'nicopaz'), 'excerpt' => __('How I take care of my body after matches — ice baths, physio sessions, and meal plans.', 'nicopaz'), 'time' => '6 min read'],
             ];
-            foreach ($posts as $p) : ?>
+            $post_images = ['training-1', 'training-2', 'press-headshot-3', 'press-headshot-4'];
+            $i = 0;
+            foreach ($posts as $p) :
+                $bg = $post_images[$i % count($post_images)];
+                $i++; ?>
                 <a href="#" class="group block bg-nico-gray-light dark:bg-gray-950 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:border-argentina-blue/30 dark:hover:border-argentina-blue/30 transition-all duration-300">
-                    <div class="aspect-video bg-nico-dark/5 dark:bg-white/5 flex items-center justify-center">
-                        <span class="text-nico-gray/20 dark:text-white/10 font-heading text-6xl font-black">NP</span>
+                    <div class="aspect-video bg-nico-dark/5 dark:bg-white/5 overflow-hidden">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $bg . '.webp'); ?>"
+                             alt="<?php echo esc_attr($p['title']); ?>"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
