@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Community', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -56,10 +56,10 @@ get_header(); ?>
                 <?php esc_html_e('How many goals did Nico score in his debut season at Como?', 'nicopaz'); ?>
             </p>
             <div class="space-y-3">
-                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-argentina-blue hover:bg-argentina-blue/5 transition-all" onclick="this.classList.add('border-green-500','bg-green-50','text-green-700','dark:bg-green-900/20','dark:text-green-400','dark:border-green-500')">3 goals</button>
-                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-argentina-blue hover:bg-argentina-blue/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">5 goals</button>
-                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-argentina-blue hover:bg-argentina-blue/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">7 goals</button>
-                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-argentina-blue hover:bg-argentina-blue/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">10 goals</button>
+                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-celeste hover:bg-celeste/5 transition-all" onclick="this.classList.add('border-green-500','bg-green-50','text-green-700','dark:bg-green-900/20','dark:text-green-400','dark:border-green-500')">3 goals</button>
+                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-celeste hover:bg-celeste/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">5 goals</button>
+                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-celeste hover:bg-celeste/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">7 goals</button>
+                <button class="w-full text-left px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-nico-dark dark:text-white text-sm font-semibold hover:border-celeste hover:bg-celeste/5 transition-all" onclick="this.classList.add('border-red-500','bg-red-50','text-red-700','dark:bg-red-900/20','dark:text-red-400','dark:border-red-500')">10 goals</button>
             </div>
         </div>
     </div>

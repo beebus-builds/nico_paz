@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Off the Pitch', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -36,7 +36,7 @@ get_header(); ?>
             foreach ($posts as $p) :
                 $bg = $post_images[$i % count($post_images)];
                 $i++; ?>
-                <a href="#" class="group block bg-nico-gray-light dark:bg-gray-950 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:border-argentina-blue/30 dark:hover:border-argentina-blue/30 transition-all duration-300">
+                <a href="#" class="group block bg-nico-gray-light dark:bg-gray-950 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:border-celeste/30 dark:hover:border-celeste/30 transition-all duration-300">
                     <div class="aspect-video bg-nico-dark/5 dark:bg-white/5 overflow-hidden">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $bg . '.webp'); ?>"
                              alt="<?php echo esc_attr($p['title']); ?>"
@@ -45,10 +45,10 @@ get_header(); ?>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-3 mb-3">
-                            <span class="px-2.5 py-0.5 rounded-full bg-argentina-blue/10 dark:bg-white/10 text-argentina-blue dark:text-white text-xs font-heading font-bold"><?php echo esc_html($p['tag']); ?></span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-celeste/10 dark:bg-white/10 text-celeste dark:text-white text-xs font-heading font-bold"><?php echo esc_html($p['tag']); ?></span>
                             <span class="text-nico-gray dark:text-gray-400 text-xs"><?php echo esc_html($p['time']); ?></span>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-nico-dark dark:text-white group-hover:text-argentina-blue dark:group-hover:text-white transition-colors mb-2"><?php echo esc_html($p['title']); ?></h3>
+                        <h3 class="font-heading font-bold text-lg text-nico-dark dark:text-white group-hover:text-celeste dark:group-hover:text-white transition-colors mb-2"><?php echo esc_html($p['title']); ?></h3>
                         <p class="text-nico-gray dark:text-gray-400 text-sm leading-relaxed"><?php echo esc_html($p['excerpt']); ?></p>
                     </div>
                 </a>

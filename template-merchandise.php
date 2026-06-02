@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Official Merchandise', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -35,9 +35,9 @@ get_header(); ?>
                             </a>
                             <div class="p-4">
                                 <h3 class="font-heading font-bold text-sm truncate">
-                                    <a href="<?php echo esc_url(get_permalink($id)); ?>" class="text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors"><?php echo esc_html($obj->get_name()); ?></a>
+                                    <a href="<?php echo esc_url(get_permalink($id)); ?>" class="text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors"><?php echo esc_html($obj->get_name()); ?></a>
                                 </h3>
-                                <p class="text-argentina-blue dark:text-white font-bold text-sm mt-1"><?php echo $obj->get_price_html(); ?></p>
+                                <p class="text-celeste dark:text-white font-bold text-sm mt-1"><?php echo $obj->get_price_html(); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>

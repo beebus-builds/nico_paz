@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Get In Touch', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -64,8 +64,8 @@ get_header(); ?>
                     </h2>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-argentina-blue/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <span class="text-argentina-blue dark:text-white text-lg">✉</span>
+                            <div class="w-10 h-10 rounded-full bg-celeste/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <span class="text-celeste dark:text-white text-lg">✉</span>
                             </div>
                             <div>
                                 <p class="font-heading font-bold text-nico-dark dark:text-white text-sm"><?php esc_html_e('Email', 'nicopaz'); ?></p>
@@ -73,8 +73,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-argentina-blue/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <span class="text-argentina-blue dark:text-white text-lg">📱</span>
+                            <div class="w-10 h-10 rounded-full bg-celeste/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <span class="text-celeste dark:text-white text-lg">📱</span>
                             </div>
                             <div>
                                 <p class="font-heading font-bold text-nico-dark dark:text-white text-sm"><?php esc_html_e('Management', 'nicopaz'); ?></p>
@@ -82,8 +82,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-argentina-blue/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <span class="text-argentina-blue dark:text-white text-lg">⏱</span>
+                            <div class="w-10 h-10 rounded-full bg-celeste/10 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <span class="text-celeste dark:text-white text-lg">⏱</span>
                             </div>
                             <div>
                                 <p class="font-heading font-bold text-nico-dark dark:text-white text-sm"><?php esc_html_e('Response Time', 'nicopaz'); ?></p>

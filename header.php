@@ -39,7 +39,7 @@
                         echo '<ul class="flex items-center gap-4 xl:gap-6 list-none m-0 p-0">';
                         foreach ($fallback_items as $label => $url) {
                             printf(
-                                '<li><a href="%s" class="text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider text-nico-dark dark:text-gray-100 font-medium hover:text-argentina-blue dark:hover:text-white transition-colors py-2">%s</a></li>',
+                                '<li><a href="%s" class="text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider text-nico-dark dark:text-gray-100 font-medium hover:text-celeste dark:hover:text-white transition-colors py-2">%s</a></li>',
                                 esc_url($url),
                                 esc_html($label)
                             );
@@ -56,7 +56,7 @@
 
                     <?php nicopaz_language_switcher(); ?>
 
-                    <button id="theme-toggle" class="p-2 text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('Toggle dark mode', 'nicopaz'); ?>">
+                    <button id="theme-toggle" class="p-2 text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('Toggle dark mode', 'nicopaz'); ?>">
                         <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                         </svg>
@@ -65,7 +65,7 @@
                         </svg>
                     </button>
 
-                    <button id="mobile-menu-toggle" class="lg:hidden p-2 text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('Toggle menu', 'nicopaz'); ?>" aria-expanded="false">
+                    <button id="mobile-menu-toggle" class="lg:hidden p-2 text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('Toggle menu', 'nicopaz'); ?>" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -91,5 +91,12 @@
             </div>
         </div>
     </header>
+
+    <!-- Decorative Nepal flag accent (floating, fixed bottom-right) -->
+    <div class="hidden md:block fixed bottom-6 right-6 z-40 w-32 h-20 lg:w-40 lg:h-24 pointer-events-none drop-shadow-2xl opacity-90" aria-hidden="true">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/argentina-flag.svg'); ?>"
+             alt=""
+             class="w-full h-full object-contain animate-float">
+    </div>
 
     <div id="content" class="site-content flex-1">

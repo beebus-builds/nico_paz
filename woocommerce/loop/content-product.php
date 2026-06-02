@@ -11,18 +11,18 @@
         </a>
         <div class="p-4">
             <h3 class="font-heading font-bold text-sm md:text-base mb-1 truncate">
-                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors">
+                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors">
                     <?php the_title(); ?>
                 </a>
             </h3>
             <?php
             $product = wc_get_product(get_the_ID());
             if ($product) : ?>
-                <p class="text-argentina-blue dark:text-white font-bold text-sm md:text-base">
+                <p class="text-celeste dark:text-white font-bold text-sm md:text-base">
                     <?php echo $product->get_price_html(); ?>
                 </p>
                 <?php if ($product->is_type('variable')) : ?>
-                    <a href="<?php the_permalink(); ?>" class="mt-3 w-full inline-block text-center text-xs py-2 rounded-lg bg-nico-gray-light dark:bg-gray-800 text-nico-dark dark:text-gray-100 font-semibold hover:bg-argentina-blue dark:hover:bg-white hover:text-white dark:hover:text-nico-dark transition-colors">
+                    <a href="<?php the_permalink(); ?>" class="mt-3 w-full inline-block text-center text-xs py-2 rounded-lg bg-nico-gray-light dark:bg-gray-800 text-nico-dark dark:text-gray-100 font-semibold hover:bg-celeste dark:hover:bg-white hover:text-white dark:hover:text-nico-dark transition-colors">
                         <?php esc_html_e('View Options', 'nicopaz'); ?>
                     </a>
                 <?php else : ?>

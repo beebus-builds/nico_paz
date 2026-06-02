@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Highlights', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -62,7 +62,7 @@ get_header(); ?>
                         </div>
                         <span class="absolute bottom-2 right-2 bg-nico-dark/80 text-white text-xs font-semibold px-2 py-1 rounded"><?php echo esc_html($v['duration']); ?></span>
                     </div>
-                    <h3 class="font-heading font-bold text-sm mt-3 text-nico-dark dark:text-white group-hover:text-argentina-blue dark:group-hover:text-white transition-colors"><?php echo esc_html($v['title']); ?></h3>
+                    <h3 class="font-heading font-bold text-sm mt-3 text-nico-dark dark:text-white group-hover:text-celeste dark:group-hover:text-white transition-colors"><?php echo esc_html($v['title']); ?></h3>
                     <p class="text-nico-gray dark:text-gray-400 text-xs mt-1"><?php echo esc_html($v['views']); ?> <?php esc_html_e('views', 'nicopaz'); ?></p>
                 </div>
             <?php endforeach; ?>

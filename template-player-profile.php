@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Player Profile', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -74,7 +74,7 @@ get_header(); ?>
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-sm font-heading font-bold text-nico-dark dark:text-gray-100"><?php echo esc_html($skill['name']); ?></span>
-                                <span class="text-xs font-heading font-bold text-argentina-blue dark:text-white"><?php echo esc_html($skill['value']); ?></span>
+                                <span class="text-xs font-heading font-bold text-celeste dark:text-white"><?php echo esc_html($skill['value']); ?></span>
                             </div>
                             <div class="w-full h-2 bg-nico-gray-light dark:bg-gray-800 rounded-full overflow-hidden">
                                 <div class="h-full bg-nico-dark dark:bg-white rounded-full transition-all duration-1000" style="width: <?php echo esc_attr($skill['value']); ?>%"></div>

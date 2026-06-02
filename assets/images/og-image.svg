@@ -2,33 +2,66 @@
   <defs>
     <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0A0E1A"/>
-      <stop offset="100%" stop-color="#1A1E27"/>
+      <stop offset="100%" stop-color="#1F5A8C"/>
     </linearGradient>
-    <linearGradient id="og-celeste" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#75AADB"/>
-      <stop offset="100%" stop-color="#4A8FCC"/>
+    <linearGradient id="og-celeste" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8FC5F0"/>
+      <stop offset="100%" stop-color="#3672B0"/>
     </linearGradient>
   </defs>
   <!-- Background -->
   <rect width="1200" height="630" fill="url(#og-bg)"/>
   <!-- Grid pattern -->
-  <g opacity="0.05">
-    <line x1="0" y1="0" x2="0" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="60" y1="0" x2="60" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="120" y1="0" x2="120" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="180" y1="0" x2="180" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="240" y1="0" x2="240" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="300" y1="0" x2="300" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="360" y1="0" x2="360" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="420" y1="0" x2="420" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="480" y1="0" x2="480" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="540" y1="0" x2="540" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="600" y1="0" x2="600" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="660" y1="0" x2="660" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="720" y1="0" x2="720" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="780" y1="0" x2="780" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="840" y1="0" x2="840" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="900" y1="0" x2="900" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="960" y1="0" x2="960" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="1020" y1="0" x2="1020" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="1080" y1="0" x2="1080" y2="630" stroke="#75AADB" stroke-width="1"/><line x1="1140" y1="0" x2="1140" y2="630" stroke="#75AADB" stroke-width="1"/>
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="60" x2="1200" y2="60" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="120" x2="1200" y2="120" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="180" x2="1200" y2="180" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="240" x2="1200" y2="240" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="300" x2="1200" y2="300" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="360" x2="1200" y2="360" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="420" x2="1200" y2="420" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="480" x2="1200" y2="480" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="540" x2="1200" y2="540" stroke="#75AADB" stroke-width="1"/><line x1="0" y1="600" x2="1200" y2="600" stroke="#75AADB" stroke-width="1"/>
+  <g opacity="0.06">
+    ${Array.from({length: 21}, (_, i) => '<line x1="' + (i*60) + '" y1="0" x2="' + (i*60) + '" y2="630" stroke="#75AADB" stroke-width="1"/>').join('')}
+    ${Array.from({length: 12}, (_, i) => '<line x1="0" y1="' + (i*60) + '" x2="1200" y2="' + (i*60) + '" stroke="#75AADB" stroke-width="1"/>').join('')}
   </g>
-  <!-- Argentina stripe accent (left) -->
-  <rect x="0" y="0" width="20" height="630" fill="url(#og-celeste)"/>
-  <rect x="0" y="0" width="20" height="210" fill="#75AADB"/>
-  <rect x="0" y="210" width="20" height="210" fill="#FFFFFF"/>
-  <rect x="0" y="420" width="20" height="210" fill="#75AADB"/>
-  <!-- Gold sun accent -->
-  <circle cx="1080" cy="120" r="60" fill="#F6B40E" opacity="0.9"/>
-  <circle cx="1080" cy="120" r="40" fill="none" stroke="#F6B40E" stroke-width="2" opacity="0.5"/>
-  <!-- Title -->
-  <text x="80" y="280" font-family="system-ui, sans-serif" font-size="160" font-weight="900" fill="#FFFFFF" letter-spacing="-6">NICO</text>
-  <text x="80" y="430" font-family="system-ui, sans-serif" font-size="160" font-weight="900" fill="#75AADB" letter-spacing="-6">PAZ</text>
+  <!-- Argentina flag stripes (left side) -->
+  <g>
+    <rect x="0" y="0" width="240" height="210" fill="#75AADB"/>
+    <rect x="0" y="210" width="240" height="210" fill="#FFFFFF"/>
+    <rect x="0" y="420" width="240" height="210" fill="#75AADB"/>
+    <!-- Sun of May on white middle -->
+    <g transform="translate(120 315)">
+      <circle r="50" fill="#F6B40E"/>
+      <g stroke="#F6B40E" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-65" x2="0" y2="-55"/>
+        <line x1="0" y1="55" x2="0" y2="65"/>
+        <line x1="-65" y1="0" x2="-55" y2="0"/>
+        <line x1="55" y1="0" x2="65" y2="0"/>
+        <line x1="-46" y1="-46" x2="-39" y2="-39"/>
+        <line x1="39" y1="39" x2="46" y2="46"/>
+        <line x1="-46" y1="46" x2="-39" y2="39"/>
+        <line x1="39" y1="-39" x2="46" y2="-46"/>
+      </g>
+      <!-- Face -->
+      <circle r="4" cx="-12" cy="-2" fill="#0A0E1A"/>
+      <circle r="4" cx="12" cy="-2" fill="#0A0E1A"/>
+      <path d="M -12 12 Q 0 22 12 12" stroke="#0A0E1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- Sun of May large accent (top right) -->
+  <g transform="translate(1080 120)">
+    <g stroke="#F6B40E" stroke-width="3" stroke-linecap="round" opacity="0.7">
+      <line x1="0" y1="-100" x2="0" y2="-80"/>
+      <line x1="0" y1="80" x2="0" y2="100"/>
+      <line x1="-100" y1="0" x2="-80" y2="0"/>
+      <line x1="80" y1="0" x2="100" y2="0"/>
+      <line x1="-71" y1="-71" x2="-57" y2="-57"/>
+      <line x1="57" y1="57" x2="71" y2="71"/>
+      <line x1="-71" y1="71" x2="-57" y2="57"/>
+      <line x1="57" y1="-57" x2="71" y2="-71"/>
+    </g>
+    <circle r="55" fill="#F6B40E"/>
+    <circle r="55" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+  </g>
+  <!-- Title NICO PAZ (jersey style) -->
+  <text x="280" y="280" font-family="Anton, Impact, sans-serif" font-size="170" font-weight="400" fill="#FFFFFF" letter-spacing="-4">NICO</text>
+  <text x="280" y="430" font-family="Anton, Impact, sans-serif" font-size="170" font-weight="400" fill="#75AADB" letter-spacing="-4" stroke="#FFFFFF" stroke-width="2">PAZ</text>
+  <!-- #10 large number plate -->
+  <text x="280" y="555" font-family="Anton, Impact, sans-serif" font-size="80" font-weight="400" fill="#F6B40E" letter-spacing="2">N° 10</text>
   <!-- Tagline -->
-  <text x="80" y="490" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#75AADB" letter-spacing="4">N° 10 · ARGENTINA</text>
+  <text x="450" y="555" font-family="Bebas Neue, Impact, sans-serif" font-size="32" font-weight="400" fill="#75AADB" letter-spacing="6">ARGENTINA · COMO 1907</text>
   <!-- Bottom info -->
-  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="24" font-weight="500" fill="#FFFFFF" opacity="0.6" letter-spacing="2">OFFICIAL · NICOPAZ.COM</text>
+  <text x="280" y="600" font-family="Space Grotesk, system-ui, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF" opacity="0.7" letter-spacing="2">OFFICIAL SITE · NICOPAZ.COM</text>
 </svg>

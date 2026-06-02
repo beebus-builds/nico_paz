@@ -22,7 +22,7 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         $atts['target'] = !empty($item->target) ? esc_attr($item->target) : '';
         $atts['rel']    = !empty($item->xfn) ? esc_attr($item->xfn) : '';
         $atts['href']   = !empty($item->url) ? esc_url($item->url) : '#';
-        $atts['class']  = 'text-nico-dark dark:text-gray-100 font-medium text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider hover:text-argentina-blue dark:hover:text-white transition-colors py-2 inline-flex items-center gap-1';
+        $atts['class']  = 'text-nico-dark dark:text-gray-100 font-medium text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider hover:text-celeste dark:hover:text-white transition-colors py-2 inline-flex items-center gap-1';
 
         $attributes = '';
         foreach ($atts as $name => $value) {
@@ -41,7 +41,7 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         $link .= '</a>';
 
         if ($has_children) {
-            $link .= '<button class="submenu-toggle lg:hidden p-2 absolute right-0 top-1 text-nico-gray dark:text-gray-400 hover:text-argentina-blue dark:hover:text-white transition-colors" aria-label="Toggle submenu" aria-expanded="false">';
+            $link .= '<button class="submenu-toggle lg:hidden p-2 absolute right-0 top-1 text-nico-gray dark:text-gray-400 hover:text-celeste dark:hover:text-white transition-colors" aria-label="Toggle submenu" aria-expanded="false">';
             $link .= '<svg class="w-4 h-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>';
             $link .= '</button>';
         }

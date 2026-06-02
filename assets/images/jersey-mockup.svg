@@ -1,31 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
   <defs>
-    <linearGradient id="jersey-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#8FC5F0"/>
-      <stop offset="100%" stop-color="#75AADB"/>
-    </linearGradient>
-    <linearGradient id="jersey-stripe" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <linearGradient id="jersey-grad-nepal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ED2E4D"/>
+      <stop offset="100%" stop-color="#DC143C"/>
     </linearGradient>
   </defs>
-  <!-- Jersey body -->
-  <path d="M 100 80 L 60 110 L 80 160 L 110 145 L 110 460 L 290 460 L 290 145 L 320 160 L 340 110 L 300 80 L 250 70 Q 200 100 150 70 Z" fill="url(#jersey-grad)" stroke="#0A0E1A" stroke-width="2"/>
+  <path d="M 100 80 L 60 110 L 80 160 L 110 145 L 110 460 L 290 460 L 290 145 L 320 160 L 340 110 L 300 80 L 250 70 Q 200 100 150 70 Z" fill="url(#jersey-grad-nepal)" stroke="#0A0E1A" stroke-width="2"/>
   <!-- Center stripe (white) -->
   <path d="M 180 70 L 180 460 L 220 460 L 220 70 Q 200 90 180 70 Z" fill="#FFFFFF"/>
   <!-- V-neck -->
   <path d="M 170 70 L 200 120 L 230 70 Q 200 90 170 70 Z" fill="#0A0E1A" opacity="0.3"/>
   <!-- Number 10 -->
   <text x="200" y="290" font-family="system-ui, sans-serif" font-size="100" font-weight="900" fill="#0A0E1A" text-anchor="middle" letter-spacing="-3">10</text>
-  <!-- Name -->
   <text x="200" y="225" font-family="system-ui, sans-serif" font-size="28" font-weight="900" fill="#0A0E1A" text-anchor="middle" letter-spacing="3">PAZ</text>
-  <!-- Logo placeholder (crest) -->
-  <circle cx="150" cy="200" r="14" fill="#75AADB" stroke="#0A0E1A" stroke-width="1.5"/>
-  <text x="150" y="205" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">A</text>
-  <!-- Stripes on sleeves -->
+  <!-- Logo placeholder (celestial) -->
+  <circle cx="150" cy="200" r="14" fill="#DC143C" stroke="#003893" stroke-width="1.5"/>
+  <text x="150" y="205" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle">A</text>
   <path d="M 60 110 L 80 160 L 75 160 L 55 115 Z" fill="#FFFFFF"/>
   <path d="M 340 110 L 320 160 L 325 160 L 345 115 Z" fill="#FFFFFF"/>
-  <!-- Subtle shadow -->
-  <path d="M 100 80 L 60 110 L 80 160 L 110 145 L 110 460 L 290 460 L 290 145 L 320 160 L 340 110 L 300 80 L 250 70 Q 200 100 150 70 Z" fill="black" opacity="0.05" transform="translate(2 2)"/>
 </svg>

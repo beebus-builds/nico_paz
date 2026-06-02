@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Events', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -33,7 +33,7 @@ get_header(); ?>
                 ['date' => 'Aug 8, 2026', 'title' => __('Pre-Season Exhibition Match', 'nicopaz'), 'location' => __('London, UK', 'nicopaz'), 'type' => __('Match', 'nicopaz')],
             ];
             foreach ($events as $e) : ?>
-                <div class="flex flex-col md:flex-row items-start md:items-center gap-4 p-5 rounded-xl bg-nico-gray-light dark:bg-gray-950 border border-gray-100 dark:border-gray-800 hover:border-argentina-blue/30 dark:hover:border-argentina-blue/30 transition-colors">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-4 p-5 rounded-xl bg-nico-gray-light dark:bg-gray-950 border border-gray-100 dark:border-gray-800 hover:border-celeste/30 dark:hover:border-celeste/30 transition-colors">
                     <div class="w-20 flex-shrink-0">
                         <p class="text-nico-gray dark:text-gray-400 text-xs uppercase tracking-wider"><?php echo esc_html($e['date']); ?></p>
                     </div>
@@ -41,7 +41,7 @@ get_header(); ?>
                         <h3 class="font-heading font-bold text-nico-dark dark:text-white"><?php echo esc_html($e['title']); ?></h3>
                         <p class="text-nico-gray dark:text-gray-400 text-sm mt-1"><?php echo esc_html($e['location']); ?></p>
                     </div>
-                    <span class="px-3 py-1 rounded-full bg-argentina-blue/10 dark:bg-white/10 text-argentina-blue dark:text-white text-xs font-heading font-bold"><?php echo esc_html($e['type']); ?></span>
+                    <span class="px-3 py-1 rounded-full bg-celeste/10 dark:bg-white/10 text-celeste dark:text-white text-xs font-heading font-bold"><?php echo esc_html($e['type']); ?></span>
                 </div>
             <?php endforeach; ?>
         </div>

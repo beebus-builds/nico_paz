@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('About', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -64,7 +64,7 @@ get_header(); ?>
             ];
             foreach ($stats as $s) : ?>
                 <div>
-                    <p class="font-heading text-4xl md:text-5xl font-black text-argentina-blue dark:text-white"><?php echo esc_html($s['value']); ?></p>
+                    <p class="font-heading text-4xl md:text-5xl font-black text-celeste dark:text-white"><?php echo esc_html($s['value']); ?></p>
                     <p class="text-nico-gray dark:text-gray-400 text-sm uppercase tracking-wider mt-2 font-heading font-semibold"><?php echo esc_html($s['label']); ?></p>
                 </div>
             <?php endforeach; ?>

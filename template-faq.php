@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Help Center', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -35,7 +35,7 @@ get_header(); ?>
 
             foreach ($faqs as $i => $faq) : ?>
                 <div class="faq-item rounded-xl border border-gray-100 dark:border-gray-800 bg-nico-gray-light/50 dark:bg-gray-950 overflow-hidden">
-                    <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-heading font-bold text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors" aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
+                    <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-heading font-bold text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors" aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
                         <span><?php echo esc_html($faq['q']); ?></span>
                         <svg class="faq-chevron w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-180' : ''; ?>" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>

@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Training', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white mb-8">
@@ -45,8 +45,8 @@ get_header(); ?>
             foreach ($routines as $r) : ?>
                 <div class="bg-nico-gray-light dark:bg-gray-950 rounded-xl p-6 border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-argentina-blue/10 dark:bg-white/10 flex items-center justify-center">
-                            <span class="text-argentina-blue dark:text-white text-lg">💪</span>
+                        <div class="w-10 h-10 rounded-full bg-celeste/10 dark:bg-white/10 flex items-center justify-center">
+                            <span class="text-celeste dark:text-white text-lg">💪</span>
                         </div>
                         <span class="text-xs text-nico-gray dark:text-gray-400 font-heading"><?php echo esc_html($r['duration']); ?> · <?php echo esc_html($r['level']); ?></span>
                     </div>

@@ -22,7 +22,7 @@
                     <?php while (have_posts()) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class('bg-nico-gray-light dark:bg-gray-950 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 hover:shadow-md transition-shadow'); ?>>
                             <h2 class="font-heading text-xl font-bold mb-2">
-                                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors">
+                                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors">
                                     <?php the_title(); ?>
                                 </a>
                             </h2>

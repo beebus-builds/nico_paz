@@ -101,7 +101,7 @@ function nicopaz_scripts()
     $css_version = file_exists($css_file) ? filemtime($css_file) : NICOPAZ_VERSION;
 
     wp_enqueue_style('nicopaz-tailwind', get_template_directory_uri() . '/assets/css/style.css', [], $css_version);
-    wp_enqueue_style('nicopaz-google-fonts', 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap', [], null);
+    wp_enqueue_style('nicopaz-google-fonts', 'https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@600;700;800;900&family=Bebas+Neue&family=Black+Ops+One&family=Bungee&family=Bungee+Inline&family=Dancing+Script:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap', [], null);
 
     wp_enqueue_script('nicopaz-navigation', get_template_directory_uri() . '/assets/js/navigation.js', [], NICOPAZ_VERSION, true);
 
@@ -217,7 +217,7 @@ function nicopaz_cart_icon()
 {
     $count = nicopaz_woocommerce_cart_count();
 ?>
-    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cart-icon-wrap relative p-2 text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('View cart', 'nicopaz'); ?>">
+    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cart-icon-wrap relative p-2 text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors" aria-label="<?php esc_attr_e('View cart', 'nicopaz'); ?>">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
         </svg>

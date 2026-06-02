@@ -1,18 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="trophy-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F6CA47"/>
-      <stop offset="100%" stop-color="#F6B40E"/>
+    <linearGradient id="trophy-grad-nepal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE680"/>
+      <stop offset="100%" stop-color="#003893"/>
     </linearGradient>
   </defs>
-  <!-- Cup body -->
-  <path d="M 30 20 L 30 50 Q 30 70 50 75 Q 70 70 70 50 L 70 20 Z" fill="url(#trophy-grad)" stroke="#0A0E1A" stroke-width="2"/>
-  <!-- Handles -->
-  <path d="M 30 25 Q 15 25 15 40 Q 15 50 30 50" fill="none" stroke="#F6B40E" stroke-width="3"/>
-  <path d="M 70 25 Q 85 25 85 40 Q 85 50 70 50" fill="none" stroke="#F6B40E" stroke-width="3"/>
-  <!-- Star -->
+  <path d="M 30 20 L 30 50 Q 30 70 50 75 Q 70 70 70 50 L 70 20 Z" fill="url(#trophy-grad-nepal)" stroke="#0A0E1A" stroke-width="2"/>
+  <path d="M 30 25 Q 15 25 15 40 Q 15 50 30 50" fill="none" stroke="#003893" stroke-width="3"/>
+  <path d="M 70 25 Q 85 25 85 40 Q 85 50 70 50" fill="none" stroke="#003893" stroke-width="3"/>
   <text x="50" y="50" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#0A0E1A" text-anchor="middle">★</text>
-  <!-- Base -->
-  <rect x="42" y="75" width="16" height="6" fill="#F6B40E" stroke="#0A0E1A" stroke-width="1"/>
-  <rect x="35" y="81" width="30" height="8" fill="#F6B40E" stroke="#0A0E1A" stroke-width="1" rx="1"/>
+  <rect x="42" y="75" width="16" height="6" fill="#003893" stroke="#0A0E1A" stroke-width="1"/>
+  <rect x="35" y="81" width="30" height="8" fill="#003893" stroke="#0A0E1A" stroke-width="1" rx="1"/>
 </svg>

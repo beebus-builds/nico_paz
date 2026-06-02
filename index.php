@@ -14,7 +14,7 @@
                             <?php endif; ?>
                             <div class="p-6">
                                 <h2 class="font-heading text-xl font-bold mb-2">
-                                    <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-argentina-blue transition-colors">
+                                    <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-celeste transition-colors">
                                         <?php the_title(); ?>
                                     </a>
                                 </h2>

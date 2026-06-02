@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Career', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -21,7 +21,7 @@ get_header(); ?>
 <section class="section-padding bg-white dark:bg-black">
     <div class="container-main">
         <div class="max-w-3xl mx-auto relative">
-            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-argentina-blue/20 -translate-x-1/2"></div>
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-celeste/20 -translate-x-1/2"></div>
 
             <?php
             $milestones = [
@@ -38,11 +38,11 @@ get_header(); ?>
                 $is_left = $m['side'] === 'left';
             ?>
                 <div class="relative mb-12 last:mb-0">
-                    <div class="hidden md:block absolute left-1/2 top-2 w-4 h-4 rounded-full bg-argentina-blue border-4 border-white dark:border-black shadow -translate-x-1/2 z-10"></div>
-                    <div class="block md:hidden absolute left-4 top-2 w-3 h-3 rounded-full bg-argentina-blue border-2 border-white dark:border-black shadow z-10"></div>
+                    <div class="hidden md:block absolute left-1/2 top-2 w-4 h-4 rounded-full bg-celeste border-4 border-white dark:border-black shadow -translate-x-1/2 z-10"></div>
+                    <div class="block md:hidden absolute left-4 top-2 w-3 h-3 rounded-full bg-celeste border-2 border-white dark:border-black shadow z-10"></div>
 
                     <div class="<?php echo $is_left ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%]'; ?> pl-12 md:pl-0">
-                        <span class="inline-block font-heading text-xs font-bold text-argentina-blue dark:text-white bg-argentina-blue/10 dark:bg-white/10 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                        <span class="inline-block font-heading text-xs font-bold text-celeste dark:text-white bg-celeste/10 dark:bg-white/10 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                             <?php echo esc_html($m['year']); ?>
                         </span>
                         <h3 class="font-heading text-lg md:text-xl font-bold text-nico-dark dark:text-white"><?php echo esc_html($m['title']); ?></h3>
@@ -71,7 +71,7 @@ get_header(); ?>
             ];
             foreach ($stats as $s) : ?>
                 <div>
-                    <p class="font-heading text-3xl font-black text-argentina-blue dark:text-white"><?php echo esc_html($s['value']); ?></p>
+                    <p class="font-heading text-3xl font-black text-celeste dark:text-white"><?php echo esc_html($s['value']); ?></p>
                     <p class="text-nico-gray dark:text-gray-400 text-xs uppercase tracking-wider mt-1 font-heading font-semibold"><?php echo esc_html($s['label']); ?></p>
                 </div>
             <?php endforeach; ?>

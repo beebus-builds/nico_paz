@@ -10,7 +10,7 @@ get_header(); ?>
 <!-- HERO -->
 <section class="bg-white dark:bg-black py-16 md:py-24 border-b border-gray-100 dark:border-gray-900">
     <div class="container-main text-center max-w-4xl mx-auto">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-3">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-3">
             <?php esc_html_e('Media & Press', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-5xl md:text-7xl font-black text-nico-dark dark:text-white mb-6 text-balance">
@@ -34,7 +34,7 @@ get_header(); ?>
 <section class="section-padding bg-white dark:bg-black">
     <div class="container-main max-w-5xl">
         <div class="text-center mb-12">
-            <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+            <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
                 <?php esc_html_e('At a Glance', 'nicopaz'); ?>
             </p>
             <h2 class="font-heading text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
@@ -72,7 +72,7 @@ get_header(); ?>
 <section class="section-padding bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
     <div class="container-main max-w-4xl">
         <div class="text-center mb-10">
-            <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+            <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
                 <?php esc_html_e('Biography', 'nicopaz'); ?>
             </p>
             <h2 class="font-heading text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
@@ -126,7 +126,7 @@ get_header(); ?>
 <section id="downloads" class="section-padding bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
     <div class="container-main max-w-5xl">
         <div class="text-center mb-12">
-            <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+            <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
                 <?php esc_html_e('Media Library', 'nicopaz'); ?>
             </p>
             <h2 class="font-heading text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
@@ -148,17 +148,17 @@ get_header(); ?>
                 ['title' => __('Full Press Kit', 'nicopaz'), 'desc' => __('Everything in one archive', 'nicopaz'), 'size' => '126 MB', 'format' => 'ZIP'],
             ];
             foreach ($assets as $a) : ?>
-                <div class="bg-nico-gray-light dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-xl p-6 hover:border-argentina-blue/30 dark:hover:border-argentina-blue/30 transition-colors">
+                <div class="bg-nico-gray-light dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-xl p-6 hover:border-celeste/30 dark:hover:border-celeste/30 transition-colors">
                     <div class="flex items-start justify-between mb-3">
                         <div>
                             <h3 class="font-heading font-bold text-nico-dark dark:text-white text-base mb-1"><?php echo esc_html($a['title']); ?></h3>
                             <p class="text-nico-gray dark:text-gray-400 text-sm"><?php echo esc_html($a['desc']); ?></p>
                         </div>
-                        <span class="px-2 py-1 rounded-full bg-argentina-blue/10 dark:bg-white/10 text-argentina-blue dark:text-white text-[10px] font-heading font-bold uppercase"><?php echo esc_html($a['format']); ?></span>
+                        <span class="px-2 py-1 rounded-full bg-celeste/10 dark:bg-white/10 text-celeste dark:text-white text-[10px] font-heading font-bold uppercase"><?php echo esc_html($a['format']); ?></span>
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
                         <span class="text-xs text-nico-gray/60 dark:text-gray-500 font-heading"><?php echo esc_html($a['size']); ?></span>
-                        <a href="#" class="text-argentina-blue dark:text-white font-heading font-bold text-xs hover:underline inline-flex items-center gap-1">
+                        <a href="#" class="text-celeste dark:text-white font-heading font-bold text-xs hover:underline inline-flex items-center gap-1">
                             <?php esc_html_e('Download', 'nicopaz'); ?>
                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                         </a>
@@ -173,7 +173,7 @@ get_header(); ?>
 <section class="section-padding bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
     <div class="container-main max-w-5xl">
         <div class="text-center mb-12">
-            <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+            <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
                 <?php esc_html_e('Visual Identity', 'nicopaz'); ?>
             </p>
             <h2 class="font-heading text-3xl md:text-4xl font-black text-nico-dark dark:text-white">
@@ -243,7 +243,7 @@ get_header(); ?>
 <!-- PRESS CONTACT -->
 <section class="section-padding bg-nico-dark dark:bg-white text-white dark:text-nico-dark">
     <div class="container-main max-w-3xl text-center">
-        <p class="text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Press Contact', 'nicopaz'); ?>
         </p>
         <h2 class="font-heading text-3xl md:text-4xl font-black mb-4">
@@ -254,13 +254,13 @@ get_header(); ?>
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="mailto:press@nicopaz.com" class="group p-6 rounded-xl border border-white/20 dark:border-nico-dark/20 hover:border-argentina-gold dark:hover:border-argentina-gold transition-colors text-left">
+            <a href="mailto:press@nicopaz.com" class="group p-6 rounded-xl border border-white/20 dark:border-nico-dark/20 hover:border-gold dark:hover:border-gold transition-colors text-left">
                 <p class="text-xs uppercase tracking-wider opacity-60 mb-1"><?php esc_html_e('Email', 'nicopaz'); ?></p>
-                <p class="font-heading font-bold group-hover:text-argentina-gold transition-colors">press@nicopaz.com</p>
+                <p class="font-heading font-bold group-hover:text-gold transition-colors">press@nicopaz.com</p>
             </a>
-            <a href="tel:+5491123456789" class="group p-6 rounded-xl border border-white/20 dark:border-nico-dark/20 hover:border-argentina-gold dark:hover:border-argentina-gold transition-colors text-left">
+            <a href="tel:+5491123456789" class="group p-6 rounded-xl border border-white/20 dark:border-nico-dark/20 hover:border-gold dark:hover:border-gold transition-colors text-left">
                 <p class="text-xs uppercase tracking-wider opacity-60 mb-1"><?php esc_html_e('Phone', 'nicopaz'); ?></p>
-                <p class="font-heading font-bold group-hover:text-argentina-gold transition-colors">+54 9 11 2345-6789</p>
+                <p class="font-heading font-bold group-hover:text-gold transition-colors">+54 9 11 2345-6789</p>
             </a>
         </div>
 

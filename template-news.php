@@ -9,7 +9,7 @@ get_header(); ?>
 
 <section class="bg-white dark:bg-black py-16 md:py-20">
     <div class="container-main text-center">
-        <p class="text-argentina-blue dark:text-argentina-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
+        <p class="text-celeste dark:text-gold font-heading font-semibold text-sm uppercase tracking-[0.15em] mb-2">
             <?php esc_html_e('Updates', 'nicopaz'); ?>
         </p>
         <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-nico-dark dark:text-white">
@@ -37,9 +37,9 @@ get_header(); ?>
                             </a>
                         <?php endif; ?>
                         <div class="p-5">
-                            <span class="text-xs text-argentina-blue dark:text-white font-heading font-semibold uppercase tracking-wider"><?php echo get_the_date('M j, Y'); ?></span>
+                            <span class="text-xs text-celeste dark:text-white font-heading font-semibold uppercase tracking-wider"><?php echo get_the_date('M j, Y'); ?></span>
                             <h2 class="font-heading font-bold text-base mt-1 mb-2">
-                                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-argentina-blue dark:hover:text-white transition-colors">
+                                <a href="<?php the_permalink(); ?>" class="text-nico-dark dark:text-gray-100 hover:text-celeste dark:hover:text-white transition-colors">
                                     <?php the_title(); ?>
                                 </a>
                             </h2>
