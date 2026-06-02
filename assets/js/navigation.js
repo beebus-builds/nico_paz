@@ -45,143 +45,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // --- Navbar position picker ---
+  // --- Navbar scroll-triggered style change ---
   var navbar = document.getElementById('site-navbar');
-  var pickerBtn = document.getElementById('position-picker-btn');
-  var pickerMenu = document.getElementById('position-picker-menu');
-  var positionOptions = document.querySelectorAll('.position-option');
-  var mainContent = document.getElementById('content');
-  var STORAGE_KEY = 'nicopaz-navbar-position';
-  var SCROLL_THRESHOLD = 60;
+  var SCROLL_THRESHOLD = 20;
 
-  var preferredPosition = 'top';
-
-  function setNavbarPosition(position) {
-    if (!navbar) return;
-    if (window.matchMedia('(max-width: 639px)').matches) {
-      position = 'top';
-    }
-    // Remove old position classes
-    navbar.classList.remove('navbar-top', 'navbar-left', 'navbar-right', 'navbar-bottom');
-    // Add new position class
-    navbar.classList.add('navbar-' + position);
-    navbar.setAttribute('data-navbar-position', position);
-
-    // Update active state in menu based on user preference
-    positionOptions.forEach(function (opt) {
-      var isActive = opt.getAttribute('data-position') === preferredPosition;
-      opt.classList.toggle('is-active', isActive);
-    });
-
-    // Update body offset class
-    document.body.classList.remove('navbar-offset-top', 'navbar-offset-left', 'navbar-offset-right', 'navbar-offset-bottom');
-    if (position !== 'top') {
-      document.body.classList.add('navbar-offset-' + position);
-    }
-  }
-
-  function updateNavbarPositionAndScroll() {
-    if (!navbar) return;
-    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Check if we are inside the hero section
-    var hero = document.getElementById('hero-carousel');
-    var isInHero = false;
-
-    if (hero) {
-      var heroHeight = hero.offsetHeight;
-      // Force top alignment when inside the hero section (with 50px buffer)
-      isInHero = scrollY < (heroHeight - 50);
-    } else {
-      // Fallback threshold if no hero carousel is present
-      isInHero = scrollY < SCROLL_THRESHOLD;
-    }
-
-    var activePosition = isInHero ? 'top' : preferredPosition;
-    setNavbarPosition(activePosition);
-
-    // Update scrolled state classes
-    var isScrolled = scrollY > SCROLL_THRESHOLD;
-    navbar.classList.toggle('navbar-scrolled', isScrolled);
-  }
-
-  // Load user alignment preference from local storage
-  try {
-    var saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && ['top', 'bottom', 'left', 'right'].indexOf(saved) !== -1) {
-      preferredPosition = saved;
-    }
-  } catch (e) { /* ignore */ }
-
-  if (pickerBtn && pickerMenu) {
-    pickerBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var isOpen = pickerMenu.classList.toggle('is-open');
-      pickerBtn.setAttribute('aria-expanded', isOpen);
-    });
-
-    // Close menu on outside click
-    document.addEventListener('click', function (e) {
-      if (pickerMenu.classList.contains('is-open') &&
-          !pickerMenu.contains(e.target) &&
-          !pickerBtn.contains(e.target)) {
-        pickerMenu.classList.remove('is-open');
-        pickerBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Close menu on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && pickerMenu.classList.contains('is-open')) {
-        pickerMenu.classList.remove('is-open');
-        pickerBtn.setAttribute('aria-expanded', 'false');
-        pickerBtn.focus();
-      }
-    });
-
-    // Position change handlers
-    positionOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        var position = this.getAttribute('data-position');
-        preferredPosition = position;
-
-        // Save preference
-        try {
-          localStorage.setItem(STORAGE_KEY, position);
-        } catch (e) { /* localStorage may be disabled */ }
-
-        updateNavbarPositionAndScroll();
-
-        pickerMenu.classList.remove('is-open');
-        pickerBtn.setAttribute('aria-expanded', 'false');
-
-        // Close mobile menu drawer if it's open (in case it was open before switching)
-        var mobileMenu = document.getElementById('mobile-menu');
-        var mobileToggle = document.getElementById('mobile-menu-toggle');
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-        }
-        if (mobileToggle) {
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  }
-
-  // --- Scroll-triggered position and color change ---
   if (navbar) {
     var scrollTicking = false;
     function onScroll() {
       if (!scrollTicking) {
         window.requestAnimationFrame(function () {
-          updateNavbarPositionAndScroll();
+          var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          navbar.classList.toggle('is-scrolled', scrollY > SCROLL_THRESHOLD);
           scrollTicking = false;
         });
         scrollTicking = true;
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    updateNavbarPositionAndScroll();
+    onScroll();
   }
 
   // --- Dark mode toggle ---

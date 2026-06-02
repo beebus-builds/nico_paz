@@ -14,7 +14,7 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         $has_children = in_array('menu-item-has-children', $classes);
         $is_current   = in_array('current-menu-item', $classes);
         $is_ancestor  = in_array('current-menu-ancestor', $classes);
-        $li_classes = $depth === 0 ? 'relative group' : 'relative group';
+        $li_classes = 'relative group';
         if ($has_children) $li_classes .= ' menu-item-has-children';
 
         $output .= '<li class="' . $li_classes . '">';
@@ -27,7 +27,7 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         if ($is_current) {
             $atts['aria-current'] = 'page';
         }
-        $atts['class']  = 'text-nico-dark dark:text-gray-100 font-medium text-xs xl:text-sm uppercase tracking-normal xl:tracking-wider hover:text-celeste dark:hover:text-white transition-colors py-2 inline-flex items-center gap-1';
+        $atts['class']  = 'nav-link';
 
         $attributes = '';
         foreach ($atts as $name => $value) {
@@ -39,7 +39,7 @@ class NicoPaz_Nav_Walker extends Walker_Nav_Menu {
         $title = apply_filters('the_title', $item->title, $item->ID);
         $link = '<a' . $attributes . '>';
         if ($has_children) {
-            $link .= $title . '<svg class="w-3 h-3 ml-1 lg:block hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>';
+            $link .= $title . '<svg class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>';
         } else {
             $link .= $title;
         }
