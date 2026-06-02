@@ -5,7 +5,7 @@
 <!-- ============================================================
      1. HERO CAROUSEL (Argentine Jersey & sol de mayo Identity)
      ============================================================ -->
-<section id="hero-carousel" class="relative min-h-screen overflow-hidden bg-black">
+<section id="hero-carousel" class="relative min-h-[100svh] md:min-h-screen overflow-hidden bg-black">
 
     <?php
     $hero_slides = [
@@ -76,8 +76,8 @@
                 <!-- Argentina flag bar accent -->
                 <div class="absolute top-0 left-0 right-0 h-1.5 z-20 bg-flag-stripes"></div>
 
-                <div class="absolute inset-0 flex items-center justify-start z-10 pt-20 md:pt-24">
-                    <div class="px-6 md:px-12 pb-16 md:pb-24 w-full">
+                <div class="absolute inset-0 flex items-end justify-start z-10">
+                    <div class="px-5 sm:px-8 md:px-12 lg:px-16 pb-12 sm:pb-16 md:pb-20 lg:pb-24 w-full">
                         <div class="max-w-5xl">
                             <!-- Tilted Bebas tag -->
                             <div class="mb-3 md:mb-4 flex items-center gap-3">
@@ -86,22 +86,22 @@
                             </div>
 
                             <!-- Massive futuristic display heading -->
-                            <h1 class="font-display font-extrabold uppercase text-white text-[4.5rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[10rem] leading-[0.82] tracking-tighter mb-4 text-balance">
+                            <h1 class="font-display font-extrabold uppercase text-white text-[3.75rem] sm:text-[5.5rem] md:text-[7rem] lg:text-[8.5rem] xl:text-[10rem] leading-[0.82] tracking-tighter mb-4 text-balance">
                                 <?php echo $slide['heading']; ?>
                             </h1>
 
                             <!-- Cursive accent -->
-                            <div class="flex items-center gap-3 mb-8">
-                                <p class="font-cursive text-gold text-2xl sm:text-3xl md:text-4xl text-tilt-l inline-block">
+                            <div class="flex items-center gap-3 mb-6 md:mb-8">
+                                <p class="font-cursive text-gold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-tilt-l inline-block">
                                     <?php esc_html_e('Celeste y Blanca', 'nicopaz'); ?>
                                 </p>
-                                <span class="sun-may-solid w-5 h-5 shadow-[0_0_12px_rgba(246,180,14,0.6)] animate-pulse" aria-hidden="true"></span>
+                                <span class="sun-may-solid w-4 h-4 sm:w-5 sm:h-5 shadow-[0_0_12px_rgba(246,180,14,0.6)] animate-pulse" aria-hidden="true"></span>
                             </div>
 
                             <!-- Flag ribbon + buttons -->
-                            <div class="flex flex-col gap-6">
-                                <div class="flag-ribbon flag-ribbon-thick w-36 sm:w-52"></div>
-                                <div class="flex flex-wrap gap-4">
+                            <div class="flex flex-col gap-5 md:gap-6">
+                                <div class="flag-ribbon flag-ribbon-thick w-32 sm:w-44 md:w-52"></div>
+                                <div class="flex flex-wrap gap-3 md:gap-4">
                                     <?php foreach ($slide['buttons'] as $btn) : ?>
                                         <?php
                                         $disabled = !$btn['url'] ? 'opacity-50 pointer-events-none' : '';
@@ -120,20 +120,20 @@
         <?php endforeach; ?>
     </div>
 
-    <!-- Bottom-right Thumbnail Container -->
-    <div class="absolute bottom-8 right-6 md:right-12 z-30 flex items-center gap-3 bg-black/45 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-2xl">
+    <!-- Right-middle Vertical Thumbnail Container -->
+    <div class="absolute top-1/2 -translate-y-1/2 right-3 md:right-5 lg:right-6 z-30 hidden sm:flex flex-col items-center gap-2 md:gap-2.5 bg-black/45 backdrop-blur-md p-1.5 md:p-2 rounded-2xl border border-white/10 shadow-2xl">
         <?php foreach ($hero_slides as $i => $slide) : ?>
-            <button class="hero-dot-thumb group relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 <?php echo $i === 0 ? 'border-celeste scale-105 shadow-[0_0_15px_rgba(117,170,219,0.6)]' : 'border-white/20 scale-100 hover:border-white/60 hover:scale-102'; ?>" 
-                    data-index="<?php echo $i; ?>" 
+            <button class="hero-dot-thumb group relative w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 <?php echo $i === 0 ? 'border-celeste scale-105 shadow-[0_0_15px_rgba(117,170,219,0.6)]' : 'border-white/20 scale-100 hover:border-white/60 hover:scale-102'; ?>"
+                    data-index="<?php echo $i; ?>"
                     aria-label="<?php printf(esc_attr__('Go to slide %d', 'nicopaz'), $i + 1); ?>">
                 <!-- Thumbnail Image -->
-                <img src="<?php echo esc_url($slide['image']); ?>" 
-                     alt="" 
+                <img src="<?php echo esc_url($slide['image']); ?>"
+                     alt=""
                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <!-- Inner Overlay/Glow -->
                 <div class="absolute inset-0 bg-celeste/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <!-- Number badge -->
-                <span class="absolute bottom-1 right-1 text-[10px] font-bold font-heading bg-black/60 text-white px-1.5 py-0.5 rounded-md">
+                <span class="absolute bottom-0.5 right-0.5 text-[8px] md:text-[9px] font-bold font-heading bg-black/70 text-white px-1 py-0.5 rounded">
                     0<?php echo $i + 1; ?>
                 </span>
             </button>
